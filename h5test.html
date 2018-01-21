@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表单变换</title>
+	<script type="text/javascript">
+		function loadchange(){
+			list = document.getElementsByClassName("table")
+			for(i=0;i<list.length;i++){
+				list[i].style.width=list[i].parentElement.innerText+"px"
+			}			
+		}
+		function scrollfun(){
+			document.getElementById("testdiv").innerText=document.documentElement.scrollTop;
+			list = document.getElementsByClassName("table")
+			for(i=0;i<list.length;i++){
+				list[i].style.width = document.documentElement.scrollTop<600 ? (document.documentElement.scrollTop-400)*0.005*list[i].parentElement.innerText+"px" : (document.documentElement.scrollTop>850 ? (1050-document.documentElement.scrollTop)*0.005*list[i].parentElement.innerText+"px" : list[i].parentElement.innerText+"px");
+
+			}
+		}
+	</script>
+</head>
+<body onscroll="scrollfun()">
+	<div style="height: 1000px"></div>
+	<div>
+		<span class="table" style="width:0px;height:15px;background-color:red;display: inline-block;"></span>
+		<span >55</span>
+	</div>
+	<div>
+		<span class="table" style="width:0px;height:15px;background-color:red;display: inline-block;"></span>
+		<span >47</span>
+	</div>
+	<div>
+		<span class="table" style="width:0px;height:15px;background-color:red;display: inline-block;"></span>
+		<span >80</span>
+	</div>
+	<div id = "testdiv">0</div>
+	<div style="height: 1000px"></div>
+</body>
+</html>
