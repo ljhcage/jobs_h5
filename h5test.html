@@ -11,10 +11,11 @@
 			}			
 		}
 		function scrollfun(){
-			document.getElementById("testdiv").innerText=document.documentElement.scrollTop;
+			var toptemp = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			document.getElementById("testdiv").innerText=toptemp;
 			list = document.getElementsByClassName("table")
 			for(i=0;i<list.length;i++){
-				list[i].style.width = document.documentElement.scrollTop<600 ? (document.documentElement.scrollTop-400)*0.005*list[i].parentElement.innerText+"px" : (document.documentElement.scrollTop>850 ? (1050-document.documentElement.scrollTop)*0.005*list[i].parentElement.innerText+"px" : list[i].parentElement.innerText+"px");
+				list[i].style.width = toptemp<600 ? (toptemp-400)*0.005*list[i].parentElement.innerText+"px" : (toptemp>850 ? (1050-toptemp)*0.005*list[i].parentElement.innerText+"px" : list[i].parentElement.innerText+"px");
 
 			}
 		}
