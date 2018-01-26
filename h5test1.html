@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>【HUSTer去哪儿】之材料科学与工程学院</title>
+	<link href="mystyle.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript">
+		function loadchange(){
+			//list = document.getElementsByClassName("table")
+			//for(i=0;i<list.length;i++){
+			//	list[i].style.width=list[i].parentElement.innerText+"px"
+			//}			
+			document.getElementById("screenHeight").innerText=document.documentElement.clientHeight
+			drawCircle(0);
+			// 实际排版处理的页面高度 document.body.clientHeight = document.body.scrollHeight
+			// 当前可用的浏览器高度 document.documentElement.clientHeight
+			// 获取某个元素距离最近父节点顶端的距离document.getElementById("screenHeight").offsetTop
+		}
+		function scrollfun(){
+			var toptemp = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			document.getElementById("testdiv").innerText=toptemp;
+			//drawCircle(toptemp, [5,30,15,30,20]);
+			//var HeightTotal = document.body.scrollHeight;
+			var clientHeight = document.documentElement.clientHeight+250;
+			var proCircleOffsetTop = document.getElementById("pro_circle_section").offsetTop + 476;
+			if((proCircleOffsetTop-toptemp>-30)&&(proCircleOffsetTop-toptemp<clientHeight+60)){
+				drawProCircle(proCircleOffsetTop-toptemp);
+			}
+			list = document.getElementsByClassName("table")
+			for(i=0;i<list.length;i++){
+				list[i].style.width = toptemp<600 ? (toptemp-400)*0.005*list[i].parentElement.innerText+"px" : (toptemp>850 ? (1050-toptemp)*0.005*list[i].parentElement.innerText+"px" : list[i].parentElement.innerText+"px");
+			}
+		}
+		function drawCircle(scorllnum){ 
+			var scorll = scorllnum>2600?(scorllnum<3000?scorllnum-2600:300):0;
+			var color = ["#27255F","#2F368F","#3666B0","#2CA8E0","#77D1F6"];  
+			var data = [5,30,15,30,20];
+			var canvas = document.getElementById("circle");  
+    		var ctx = canvas.getContext("2d");
+    		//ctx.clearRect(0, 0, canvas.width, canvas.height) 
+    		canvas.height = canvas.height //重置宽度或者高度即可自动清空画布
+			var startPoint=Math.PI/2;  
+		    for(var i=0;i<data.length;i++){  
+		        ctx.fillStyle = color[i];  
+		        ctx.beginPath();  
+		        ctx.moveTo(200,150);  
+		        ctx.arc(200,150,150,startPoint,startPoint+Math.PI*2*(data[i]/100)*(scorll/300),false);  
+		        ctx.fill();  
+		        startPoint+=Math.PI*2*(data[i]/100);  
+		    }  
+		}
+		function drawProCircle(scorllnum){
+			//var scorll = scorllnum>550?(scorllnum<850?scorllnum-550:300):0;
+			var clientHeight = document.documentElement.clientHeight+320;
+			var scorll = scorllnum>150?(scorllnum<clientHeight-150?150:clientHeight - scorllnum):scorllnum;
+			var color = ["#27255F","#2F368F","#3666B0","#2CA8E0","#77D1F6","#43E5F7"];  
+			var canvas = document.getElementById("pro_circle");
+    		var ctx = canvas.getContext("2d");
+    		var data = [64.78,15.82,5.07,14.33];
+    		//ctx.clearRect(0, 0, canvas.width, canvas.height) 
+    		canvas.height = canvas.height //重置宽度或者高度即可自动清空画布
+			var startPoint=Math.PI/2;  
+		    for(var i=0;i<data.length;i++){  
+		        ctx.fillStyle = color[i];  
+		        ctx.beginPath();  
+		        ctx.moveTo(200,150);  
+		        ctx.arc(200,150,150,startPoint,startPoint+Math.PI*2*(data[i]/100)*(scorll/150),false);  
+		        ctx.fill();  
+		        startPoint+=Math.PI*2*(data[i]/100);  
+		    }  
+		}
+		function drawOutCircle(scorllnum){
+			//var scorll = scorllnum>550?(scorllnum<850?scorllnum-550:300):0;
+			var clientHeight = document.documentElement.clientHeight+320;
+			var scorll = scorllnum>150?(scorllnum<clientHeight-150?150:clientHeight - scorllnum):scorllnum;
+			var color = ["#27255F","#2F368F","#3666B0","#2CA8E0","#77D1F6","#43E5F7"];  
+			var canvas = document.getElementById("pro_circle");
+    		var ctx = canvas.getContext("2d");
+    		var data = [64.78,15.82,5.07,14.33];
+    		//ctx.clearRect(0, 0, canvas.width, canvas.height) 
+    		canvas.height = canvas.height //重置宽度或者高度即可自动清空画布
+			var startPoint=Math.PI/2;  
+		    for(var i=0;i<data.length;i++){  
+		        ctx.fillStyle = color[i];  
+		        ctx.beginPath();  
+		        ctx.moveTo(200,150);  
+		        ctx.arc(200,150,150,startPoint,startPoint+Math.PI*2*(data[i]/100)*(scorll/150),false);  
+		        ctx.fill();  
+		        startPoint+=Math.PI*2*(data[i]/100);  
+		    }  
+		}
+	</script>
+</head>
+<body onscroll="scrollfun()" onload="loadchange()">
+	<div id="js_article" class="rich_media">
+	<div class="rich_media_inner">
+		<div id="page-content" class = "rich_media_area_primary">
+			<div id="img-content">
+				<h2 class="rich_media_title" id="activity-name">  【HUSTer 去哪儿】之材料科学与工程学院</h2>
+				<div id="meta_content" class="rich_media_meta_list">
+                    <em id="post-date" class="rich_media_meta rich_media_meta_text">2017-06-12 </em>
+				<a class="rich_media_meta rich_media_meta_link rich_media_meta_nickname" href="https://mp.weixin.qq.com/mp/qrcode?scene=10000005&size=102&__biz=MzA3MzQ5NzIyMw==&mid=2650657124&idx=1&sn=2824077fbc04c42230a8a4f1bc7ae1db&send_time=" id="post-user">华中科技大学大学生就业指导中心</a>
+                <span class="rich_media_meta rich_media_meta_text rich_media_meta_nickname">华中科技大学大学生就业指导中心</span>
+				<div id="js_profile_qrcode" class="profile_container" style="display: block;">
+                        <div class="profile_inner">
+                            <strong class="profile_nickname">华中科技大学大学生就业指导中心</strong>
+                            <img class="profile_avatar" id="js_profile_qrcode_img" src="/mp/qrcode?scene=10000005&size=102&__biz=MzA3MzQ5NzIyMw==&mid=2650657124&idx=1&sn=2824077fbc04c42230a8a4f1bc7ae1db&send_time=" alt="">
+
+                            <p class="profile_meta">
+                            <label class="profile_meta_label">微信号</label>
+                            <span class="profile_meta_value"> hust_job</span>
+                            </p>
+
+                            <p class="profile_meta">
+                            <label class="profile_meta_label"> 功能介绍</label>
+                            <span class="profile_meta_value">发布就业信息，提供就业服务，贴心就业指导。</span>
+                            </p>
+                            
+                        </div>
+                        <span class="profile_arrow_wrp" id="js_profile_arrow_wrp" style="left: 144px;">
+                            <i class="profile_arrow arrow_out"></i>
+                            <i class="profile_arrow arrow_in"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="rich_media_content" id="js_content">
+                <p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/RW0pj7KFicIM2cn6MoBTaYC68esz4b8sRaDb4jz0Rv65dREib8rTq6ODcibPPgSVAv1wPxujykKLGaYjqmgqiceolg/0?wx_fmt=jpeg" data-ratio="0.3125" data-w="640" src="http://mmbiz.qpic.cn/mmbiz_jpg/RW0pj7KFicIM2cn6MoBTaYC68esz4b8sRaDb4jz0Rv65dREib8rTq6ODcibPPgSVAv1wPxujykKLGaYjqmgqiceolg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" style="width: auto !important; height: auto !important; visibility: visible !important;" data-fail="0"></p>
+                <section style="background-color: rgb(255, 255, 255); box-sizing: border-box;">
+                	<section style="box-sizing: border-box;">
+                		<section style=" margin: 10px 0%;  box-sizing: border-box; ">
+                			<section style="display: inline-block; width: 100%; vertical-align: top; box-shadow: rgb(0, 0, 0) 0px 0px 0px; box-sizing: border-box;"><section style="box-sizing: border-box; "><section  style=" margin-top: -40px; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; "><section style="display: inline-block; vertical-align: top; width: 25%; box-sizing: border-box;"></section><section style="display: inline-block; vertical-align: top; width: 25%; box-sizing: border-box;"></section><section style="display: inline-block; vertical-align: top; width: 25%; box-sizing: border-box;"><section style="box-sizing: border-box;"><section style="box-sizing: border-box; "><section style="box-sizing: border-box;"><p style="box-sizing: border-box;"><br style="box-sizing: border-box;"></p></section></section></section></section><section style="display: inline-block; vertical-align: top; width: 25%; box-sizing: border-box;"></section></section></section><section style="box-sizing: border-box; "><section style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; "><p><img data-s="300,640" data-type="jpeg" data-ratio="0.5555555555555556" data-w="900" src="http://mmbiz.qpic.cn/mmbiz_jpg/RW0pj7KFicIOYsFMquDmhHict8ia9CXpVO35tpSUu6fXPKyiaIhZyJuh8o0mbUSJaNPzUlsX0yQzkhuYmKkGwT8UHg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" style="width: auto !important; height: auto !important; visibility: visible !important;" data-fail="0"></p></section></section><section style="box-sizing: border-box;"><section style=" transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px); text-align: center; margin: 10px 0%;  box-sizing: border-box; "><section style="display: inline-block; width: 80%; vertical-align: top; box-shadow: rgb(128, 128, 128) 0px 0px 10px; border-style: solid; border-width: 3px; border-radius: 0px; border-color: rgb(255, 255, 255); padding: 5px; background-color: rgb(129, 125, 125); box-sizing: border-box;"><section style=" box-sizing: border-box; "><section style="box-sizing: border-box; "><section style="display: inline-block; width: 100%; vertical-align: top; box-shadow: rgb(254, 84, 121) 0px 0px 10px; border-color: rgb(255, 227, 231); border-width: 1px; border-radius: 0px; border-style: solid; box-sizing: border-box;"><section style="box-sizing: border-box; "><section style="box-sizing: border-box; "><section style="display: inline-block; width: 100%; vertical-align: top; box-shadow: rgb(225, 24, 24) 0px 0px 10px inset; border-width: 0px; background-color: rgba(31, 29, 29, 0.87); box-sizing: border-box;"><section style="box-sizing: border-box; "><section style=" margin-top: 0.5em; margin-bottom: 0.5em;  box-sizing: border-box; "><section style="display: inline-block; box-sizing: border-box;"><section style="border-bottom: 1px solid rgb(129, 125, 125); display: inline-block; padding-right: 0.8em; padding-left: 0.8em; font-size: 21px; color: rgb(255, 255, 255); box-sizing: border-box;"><p style="box-sizing: border-box;">材料科学与工程学院</p></section><section style="margin-top: 5px; color: rgb(204, 204, 204); box-sizing: border-box;"><p style="box-sizing: border-box;"> FULL LOOK</p></section></section></section></section></section></section></section></section></section></section></section></section></section><sectionstyle="box-sizing: border-box; "><section style="box-sizing: border-box; "><section style="display: inline-block; vertical-align: bottom; width: 20%; padding-right: 10px; box-sizing: border-box;"><section style="box-sizing: border-box; "><section style=" text-align: center; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; "><img style="vertical-align: middle; box-shadow: rgb(0, 0, 0) 0px 0px 0px; box-sizing: border-box; width: 100% !important; height: auto !important; visibility: visible !important;" data-ratio="0.8866666666666667" data-w="300" width="100%" data-type="png" _width="100%" src="http://mmbiz.qpic.cn/mmbiz_png/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2gjAgWKynSQ9nocEZsZmwxCpQ4pOCd3ttia865ynzHguPSyh5iaZ7jolEA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1" data-fail="0"></section></section></section><section style="display: inline-block; vertical-align: bottom; width: 80%; box-sizing: border-box;"><section style="box-sizing: border-box; "><section style="box-sizing: border-box; "><section style="color: rgb(249, 110, 87); font-size: 18px; box-sizing: border-box;"><p style="box-sizing: border-box;"><strong style="box-sizing: border-box;"> 院系简介</strong></p></section></section></section></section></section></section><section style="box-sizing: border-box; "><section style=" margin-right: 0%; margin-bottom: 8px; margin-left: 0%;  box-sizing: border-box; "><section style="background-color: rgb(45, 69, 152); height: 3px; box-sizing: border-box;"></section></section></section></section></section>
+                	</section>
+            		<section style="box-sizing: border-box; ">
+            		<section style=" margin: 10px 0%;  box-sizing: border-box; ">
+            			<section class="__bg_gif" style="display: inline-block; width: 100%; vertical-align: top; padding: 2px 3px; background-image: url(&quot;http://mmbiz.qpic.cn/mmbiz_gif/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2gdJ2WfqN8lHd5ia1YfmL0dMGKO40lMoU5mVBOsD4g0EicMpRv3vib0BNqw/s640?&quot;); background-position: 0% 0%; background-repeat: repeat-y; background-size: 100.733%; background-attachment: scroll; line-height: 1.6; box-sizing: border-box;" data-order="0">
+            				<section style="box-sizing: border-box; ">
+            					<section style=" margin: 1px 0%; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px); text-align: center;  box-sizing: border-box; ">
+            						<section style="display: inline-block; width: 100%; border-width: 1px; border-style: solid; border-color: transparent; padding: 10px; background-color: rgb(254, 255, 255); box-sizing: border-box;"><section style="box-sizing: border-box;"><section style="box-sizing: border-box; "><section style="text-align: justify; box-sizing: border-box;"><p style="text-indent: 2em; white-space: normal; box-sizing: border-box;">华中科技大学材料科学与工程学院是国家 “211 工程” 和“985 工程”重点建设的教学与科研基地，是华中科技大学建设世界知名高水平大学的重要组成部分。</p><p style="text-indent: 2em; white-space: normal; box-sizing: border-box;"><span style="text-indent: 2em; letter-spacing: 0px; box-sizing: border-box;">材料科学与工程学院始建于<strong style="box-sizing: border-box;"><span style="text-indent: 2em; letter-spacing: 0px; color: rgb(249, 110, 87); box-sizing: border-box;"> 1953</span></strong> 年，前身系华中工学院机械工程系。<strong style="box-sizing: border-box;"><span style="text-indent: 2em; letter-spacing: 0px; color: rgb(249, 110, 87); box-sizing: border-box;">2000</span></strong> 年，正式命名为华中科技大学材料科学与工程学院。</span></p><p style="text-indent: 2em; white-space: normal; box-sizing: border-box;"><span style="text-indent: 2em; letter-spacing: 0px; box-sizing: border-box;">学院师资力量雄厚，在材料科学与工程、材料成型及控制工程、电子封装技术等 3 个本科专业方向招收本科生，其中<strong style="box-sizing: border-box;"><span style="text-indent: 2em; letter-spacing: 0px; color: rgb(249, 110, 87); box-sizing: border-box;">材料成型及控制工程专业</span></strong>连续多年排名第一，新增 “功能材料” 专业方向已获批。在<strong style="box-sizing: border-box;"><span style="text-indent: 2em; letter-spacing: 0px; color: rgb(249, 110, 87); box-sizing: border-box;">数字化材料成形及先进功能材料领域</span></strong>具有明显的优势和特色。</span></p></section></section></section></section>
+            					</section>
+            				</section>
+            			</section>
+            		</section>
+            		</section>
+
+            		<section style="box-sizing: border-box; ">
+            			<section style=" margin: 10px 0%;  box-sizing: border-box; ">
+
+            				<section style="display: inline-block; width: 100%; vertical-align: top; box-sizing: border-box;"><section style="box-sizing: border-box; "><section style="box-sizing: border-box; "><section style="display: inline-block; vertical-align: bottom; width: 80%; box-sizing: border-box;"><section style="box-sizing: border-box; "><section style="box-sizing: border-box; "><section style="text-align: right; color: rgb(249, 110, 87); font-size: 18px; box-sizing: border-box;"><p style="box-sizing: border-box;"><strong style="box-sizing: border-box;">毕业生基本信息</strong></p></section></section></section></section><section style="display: inline-block; vertical-align: bottom; width: 20%; padding-left: 10px; box-sizing: border-box;"><section style="box-sizing: border-box; "><section style=" text-align: center; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; "><img style="vertical-align: middle; box-sizing: border-box; width: 100% !important; height: auto !important; visibility: visible !important;" data-src="http://mmbiz.qpic.cn/mmbiz_png/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2g9fP8iaR0ot2RqQ7GyiaMDuzEftficsHCUO2zZWGexMMOpbEbm6mNOBmZg/0?wx_fmt=png" data-ratio="0.8857142857142857" data-w="280" width="100%" data-type="png" _width="100%" src="http://mmbiz.qpic.cn/mmbiz_png/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2g9fP8iaR0ot2RqQ7GyiaMDuzEftficsHCUO2zZWGexMMOpbEbm6mNOBmZg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" data-fail="0"></section></section></section></section></section><section style="box-sizing: border-box; "><section style=" margin-right: 0%; margin-bottom: 8px; margin-left: 0%;  box-sizing: border-box; "><section style="background-color: rgb(45, 69, 152); height: 3px; box-sizing: border-box;"></section></section></section></section></section></section>
+            		<section style="box-sizing: border-box; ">
+            			<section style=" margin: 10px 0%;  box-sizing: border-box; ">
+            				<section class="__bg_gif" style="display: inline-block; width: 100%; vertical-align: top; padding: 2px 3px; background-image: url(&quot;http://mmbiz.qpic.cn/mmbiz_gif/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2gdJ2WfqN8lHd5ia1YfmL0dMGKO40lMoU5mVBOsD4g0EicMpRv3vib0BNqw/s640?&quot;); background-position: 0% 0%; background-repeat: repeat-y; background-size: 100.733%; background-attachment: scroll; line-height: 1.6; box-sizing: border-box;" data-order="1"><section style="box-sizing: border-box; "><section style=" margin: 1px 0%; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px); text-align: center;  box-sizing: border-box; "><section style="display: inline-block; width: 100%; border-width: 1px; border-style: solid; border-color: transparent; padding: 10px; background-color: rgb(254, 255, 255); box-sizing: border-box;"><section style="box-sizing: border-box;"><section style="box-sizing: border-box; "><section style="text-align: justify; box-sizing: border-box;"><p style="white-space: normal; box-sizing: border-box;">&nbsp; &nbsp; &nbsp; &nbsp; 2016 届材料科学与工程学院本科毕业生<strong style="box-sizing: border-box;"><span style="color: rgb(249, 110, 87); box-sizing: border-box;">共 335 人</span></strong>，其中男生<span style="color: rgb(249, 110, 87); box-sizing: border-box;"><strong style="box-sizing: border-box;"> 274</strong></span> 人，女生<strong style="box-sizing: border-box;"><span style="color: rgb(249, 110, 87); box-sizing: border-box;"> 61</span></strong> 人，男女比例约为<span style="color: rgb(249, 110, 87); box-sizing: border-box;"><strong style="box-sizing: border-box;"> 4:1</strong></span>。</p></section></section></section><section style="box-sizing: border-box; "><section style=" margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; "><img style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;" data-src="http://mmbiz.qpic.cn/mmbiz_png/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2g4Eia6ibnDNianXNsqNDQgwUx00KjNHoglZP2OteJokT1Tc5lgln1QdpzQ/0?wx_fmt=png" data-ratio="0.26126126126126126" data-w="555" data-type="png" src="http://mmbiz.qpic.cn/mmbiz_png/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2g4Eia6ibnDNianXNsqNDQgwUx00KjNHoglZP2OteJokT1Tc5lgln1QdpzQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" data-fail="0"></section></section></section></section></section></section></section></section>
+            		<section style="box-sizing: border-box; ">
+            			<section style=" margin: 10px 0%;  box-sizing: border-box; ">
+            				<section style="display: inline-block; width: 100%; vertical-align: top; box-sizing: border-box;"><section style="box-sizing: border-box; "><section style="box-sizing: border-box; "><section style="display: inline-block; vertical-align: bottom; width: 20%; padding-right: 10px; box-sizing: border-box;"><section style="box-sizing: border-box; "><section style=" text-align: center; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; "><img style="vertical-align: middle; box-sizing: border-box; width: 100% !important; height: auto !important; visibility: visible !important;" data-src="http://mmbiz.qpic.cn/mmbiz_png/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2gjAgWKynSQ9nocEZsZmwxCpQ4pOCd3ttia865ynzHguPSyh5iaZ7jolEA/0?wx_fmt=png" data-ratio="0.8866666666666667" data-w="300" width="100%" data-type="png" _width="100%" src="http://mmbiz.qpic.cn/mmbiz_png/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2gjAgWKynSQ9nocEZsZmwxCpQ4pOCd3ttia865ynzHguPSyh5iaZ7jolEA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" data-fail="0"></section></section></section><section style="display: inline-block; vertical-align: bottom; width: 80%; box-sizing: border-box;"><section style="box-sizing: border-box; "><section style="box-sizing: border-box; "><section style="color: rgb(249, 110, 87); font-size: 18px; box-sizing: border-box;"><p style="box-sizing: border-box;"><strong style="box-sizing: border-box;">专业分布</strong></p></section></section></section></section></section></section><section style="box-sizing: border-box; "><section style=" margin-right: 0%; margin-bottom: 8px; margin-left: 0%;  box-sizing: border-box; "><section style="background-color: rgb(45, 69, 152); height: 3px; box-sizing: border-box;"></section></section></section></section></section></section>
+            		<section id="pro_circle_section" style="box-sizing: border-box; ">
+            			<section style=" margin: 10px 0%;  box-sizing: border-box; ">
+            				<section class="__bg_gif" style="display: inline-block; width: 100%; vertical-align: top; padding: 2px 3px; background-image: url(&quot;http://mmbiz.qpic.cn/mmbiz_gif/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2gdJ2WfqN8lHd5ia1YfmL0dMGKO40lMoU5mVBOsD4g0EicMpRv3vib0BNqw/s640?&quot;); background-position: 0% 0%; background-repeat: repeat-y; background-size: 100.733%; background-attachment: scroll; line-height: 1.6; box-sizing: border-box;" data-order="2"><section style="box-sizing: border-box; "><section style=" margin: 1px 0%; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px); text-align: center;  box-sizing: border-box; "><section style="display: inline-block; width: 100%; border-width: 1px; border-style: solid; border-color: transparent; padding: 10px; background-color: rgb(254, 255, 255); box-sizing: border-box;"><section style="box-sizing: border-box;"><section style="box-sizing: border-box; "><section style="text-align: justify; color: rgb(12, 122, 181); font-size: 16px; box-sizing: border-box;"><p style="white-space: normal; box-sizing: border-box;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 0, 0); box-sizing: border-box;">2016 届材料科学与工程学院的本科毕业生中，<span style="color: rgb(12, 122, 181); box-sizing: border-box;">材料成型及控制工程</span></span><span style="letter-spacing: 0px; line-height: 1.6; box-sizing: border-box;">专业<strong style="box-sizing: border-box;"><span style="letter-spacing: 0px; line-height: 1.6; color: rgb(249, 110, 87); box-sizing: border-box;"> 217</span></strong><span style="letter-spacing: 0px; line-height: 1.6; color: rgb(0, 0, 0); box-sizing: border-box;"> 人，<span style="letter-spacing: 0px; line-height: 1.6; color: rgb(12, 122, 181); box-sizing: border-box;">材料科学与工程专业</span><strong style="box-sizing: border-box;"><span style="letter-spacing: 0px; line-height: 1.6; color: rgb(249, 110, 87); box-sizing: border-box;"> 53</span></strong> 人，<span style="letter-spacing: 0px; line-height: 1.6; color: rgb(12, 122, 181); box-sizing: border-box;">电子封装技术专业<strong style="box-sizing: border-box;"><span style="letter-spacing: 0px; line-height: 1.6; color: rgb(249, 110, 87); box-sizing: border-box;"> 17</span></strong><span style="letter-spacing: 0px; line-height: 1.6; color: rgb(42, 38, 38); box-sizing: border-box;"> 人，<span style="letter-spacing: 0px; line-height: 1.6; color: rgb(12, 122, 181); box-sizing: border-box;">功能材料专业<strong style="box-sizing: border-box;"><span style="letter-spacing: 0px; line-height: 1.6; color: rgb(249, 110, 87); box-sizing: border-box;"> 48</span></strong><span style="letter-spacing: 0px; line-height: 1.6; color: rgb(42, 38, 38); box-sizing: border-box;"> 人</span></span></span></span></span></span><span style="color: rgb(0, 0, 0); letter-spacing: 0px; line-height: 25.6px; box-sizing: border-box;">。</span></p></section></section></section><section style="box-sizing: border-box; ">
+            					<section style=" margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+            						<canvas id="pro_circle" width="400" height="300" style="float: left;"><img style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;" data-ratio="0.4734375" data-w="640" data-type="png" src="http://mmbiz.qpic.cn/mmbiz_png/RW0pj7KFicINUSQibAz7uH7dfMaWx6TY2gua9l8icDwPYILontQvyTXE6WIHibvQnvUHD5DaGtF77P2eytL8pWmlNg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1" data-fail="0"></canvas>
+            						<table style="margin-top: 0,auto,0,auto;float: left;"><tbody style="text-align: left;"><tr><td style="width:20px; background-color: #27255F"></td><td><span style="color:#27255F">材料成型及控制工程 64.78%</span></td></tr><tr></tr><tr><td style="width:20px; background-color: #2F368F"></td><td><span style="color:#2F368F">材料科学与工程专业 15.82%</span></td></tr><tr></tr><tr><td style="width:20px; background-color: #3666B0"></td><td><span style="color:#3666B0">电子封装技术专业 5.07%</span></td></tr><tr></tr><tr><td style="width:20px; background-color: #2CA8E0"></td><td><span style="color:#2CA8E0">功能材料专业 14.33%</span></td></tr></tbody></table>
+            					</section></section></section></section></section></section></section></section>
+	<div>
+		<span class="table" style="width:0px;height:15px;background-color:red;display: inline-block;"></span>
+		<span >55</span>
+	</div>
+	<div>
+		<span class="table" style="width:0px;height:15px;background-color:red;display: inline-block;"></span>
+		<span >47</span>
+	</div>
+	<div>
+		<span class="table" style="width:0px;height:15px;background-color:red;display: inline-block;"></span>
+		<span >80</span>
+	</div>
+	<div id = "testdiv">0</div>
+	<div id = "screenHeight">0</div>
+	<canvas id="circle" width="400" height="300">您的浏览器暂不支持 Canvas</canvas>  
+	<div style="height: 1000px"></div>
+	</section>
+	<p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/RW0pj7KFicIOYsFMquDmhHict8ia9CXpVO3o5MZexCX3ZJRe9BoiaT6zYUZ318WBrbFu3icUytgXfpDEv1qLWia2jo6g/0?wx_fmt=jpeg" data-ratio="0.47368421052631576" data-w="950" src="http://mmbiz.qpic.cn/mmbiz_jpg/RW0pj7KFicIOYsFMquDmhHict8ia9CXpVO3o5MZexCX3ZJRe9BoiaT6zYUZ318WBrbFu3icUytgXfpDEv1qLWia2jo6g/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" style="width: auto !important; height: auto !important; visibility: visible !important;" data-fail="0"></p>
+	</div>
+	</div>
+</div>
+	</div>
+	</div>
+</body>
+</html>
